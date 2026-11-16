@@ -9,6 +9,7 @@
 
 <script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';}}catch(e){}</script>   <!-- 首帧前应用深色,杜绝刷新闪浅色 -->
 <style>
+[hidden]{display:none!important}   /* 防作者样式(如 .wx-more{display:inline-flex})覆盖 hidden 属性 */
 :root{
   --bg:#eef2f7; --card:#ffffff; --ink:#20242e; --muted:#7b8394; --line:#e4e9f1;
   --accent:#1889e0; --accent-deep:#0f6bb8; --accent-weak:#eaf4fd;
@@ -1570,7 +1571,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.42 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.43 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
