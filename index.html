@@ -474,9 +474,11 @@ body.nav-top #chipbar{bottom:auto; top:calc(10px + env(safe-area-inset-top))}   
 .fexp-body{overflow:hidden;min-height:0}   /* 垂直留白放内部行,防 0fr 漏缝 */
 .fexp-body .trow2:first-child{padding-top:8px}
 .fexp-body .trow2:last-child{padding-bottom:6px}
-/* 站牌式分段:每站一块圆角站牌(站名/时间两行,含线路三行),宽度随内容收紧,整组居中,箭头连接 */
-.tstops{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;margin-top:5px}
+/* 站牌式分段:整组占行宽 80% 居中,每站等宽站牌(站名/时间两行,含线路三行),箭头连接 */
+.tstops{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;margin:5px auto 0;
+  width:80%}
 .tstop{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;line-height:1.3;min-width:0;
+  flex:1 1 0;
   position:relative;border:1px solid #dbe4f0;border-radius:9px;padding:6px 8px 7px;background:var(--card);
   box-shadow:0 1px 3px rgba(16,24,40,.05)}   /* 内容沉底:底部留 7px 给蓝条,上方留白多,文字整体靠下 */
 .tstop::after{content:"";position:absolute;left:2px;right:2px;bottom:0;height:3px;background:#a8d0f5;
@@ -1547,7 +1549,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.17 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.18 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
