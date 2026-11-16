@@ -1568,7 +1568,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.25 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.26 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
@@ -1878,6 +1878,29 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     body.scrollTop = 0;
   }
   /* 关闭走弹窗自己的 × / 背景点击(卡片详情 IIFE 的 close 兼容清空 body) */
+})();
+
+/* ---------- 刷新后回到原浏览位置(图片/实时数据加载改变页高,原生恢复会失效;多轮校正,用户一碰即停) ---------- */
+(function(){
+  if(window.__PK) return;   /* 私有版壳页自带同款逻辑,不重复挂 */
+  if("scrollRestoration" in history){ try{ history.scrollRestoration = "manual"; }catch(e){} }
+  var KEY = "bd-scroll";
+  try{
+    var sy = +(sessionStorage.getItem(KEY) || 0);
+    var stop = false;
+    ["touchstart","wheel","keydown"].forEach(function(ev){
+      addEventListener(ev, function(){ stop = true; }, {passive: true, once: true});
+    });
+    if(sy > 0){
+      var rs = function(){ if(!stop) window.scrollTo(0, sy); };
+      rs(); setTimeout(rs, 200); setTimeout(rs, 700); setTimeout(rs, 1500);
+    }
+  }catch(e){}
+  var t = null;
+  window.addEventListener("scroll", function(){
+    if(t) return;
+    t = setTimeout(function(){ t = null; try{ sessionStorage.setItem(KEY, String(window.scrollY)); }catch(e){} }, 250);
+  }, {passive: true});
 })();
 
 /* ---------- 导航:点击平滑滚 + 滚动高亮(双列瀑布流下按可视位置判定) ---------- */
