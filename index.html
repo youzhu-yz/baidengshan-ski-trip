@@ -1461,6 +1461,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 <a href="#stay"><span class="chip-ico">🏠</span><span class="chip-txt">住宿</span></a>
 <a href="#weather"><span class="chip-ico">❄️</span><span class="chip-txt">天气</span></a>
 <a href="#resorts"><span class="chip-ico">🏔️</span><span class="chip-txt">雪场</span></a>
+<a href="#costs"><span class="chip-ico">💰</span><span class="chip-txt">费用</span></a>
   </div>
   <button class="bar-arrow" id="barNext" type="button" aria-label="下一板块">›</button>
 </nav>
@@ -1536,12 +1537,16 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </section>
 <section id="weather">
   <div class="sec-head"><div class="sec-ico">❄️</div><div class="sec-txt"><h2>天气</h2><span class="sec-sub">大同冬季干冷 · 出发前一周再核实</span></div></div>
-  <div id="wxBox"><div class="wx-card"><div class="wx-main"><div class="wx-left"><div class="wx-num"></div></div><div class="wx-right"><div class="wx-ico">❄️</div><button class="wx-more" id="wxMore" type="button">未来7天</button></div></div><div class="wx-sun" id="wxSun" hidden><div class="wx-sun-heads"><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 8V2M8.6 4.4L11 2l2.4 2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日出</i></span><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 2v6M8.6 5.6L11 8l2.4-2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日落</i></span></div><div class="wx-sun-track"><span class="wx-sun-fill" id="wxSunFill"></span><span class="wx-sun-moon" id="wxSunMoon">🌙</span></div><div class="wx-sun-times"><b id="wxRiseTime">--:--</b><b id="wxSetTime">--:--</b></div></div><div class="wx-src"><span class="wx-src-l">数据来源·<a href="https://www.qweather.com/" target="_blank" rel="noopener">Qweather 和风天气</a></span><span class="wx-time">11-17 00:32</span><button class="wx-refresh" id="wxRefresh" type="button" aria-label="刷新数据">⟳</button></div></div></div>
+  <div id="wxBox"><div class="wx-card"><div class="wx-main"><div class="wx-left"><div class="wx-num"></div></div><div class="wx-right"><div class="wx-ico">❄️</div><button class="wx-more" id="wxMore" type="button">未来7天</button></div></div><div class="wx-sun" id="wxSun" hidden><div class="wx-sun-heads"><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 8V2M8.6 4.4L11 2l2.4 2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日出</i></span><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 2v6M8.6 5.6L11 8l2.4-2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日落</i></span></div><div class="wx-sun-track"><span class="wx-sun-fill" id="wxSunFill"></span><span class="wx-sun-moon" id="wxSunMoon">🌙</span></div><div class="wx-sun-times"><b id="wxRiseTime">--:--</b><b id="wxSetTime">--:--</b></div></div><div class="wx-src"><span class="wx-src-l">数据来源·<a href="https://www.qweather.com/" target="_blank" rel="noopener">Qweather 和风天气</a></span><span class="wx-time">11-17 00:36</span><button class="wx-refresh" id="wxRefresh" type="button" aria-label="刷新数据">⟳</button></div></div></div>
 </section>
 <section id="resorts">
   <div class="sec-head"><div class="sec-ico">🏔️</div><div class="sec-txt"><h2>雪场</h2><span class="sec-sub">日场 9:00–17:00 · 夜场 17:30–22:00 · 雪票已购</span></div></div>
   <div class="grid g2"><div class="hcard" data-card="resorts|🏔️ 万龙白登山滑雪场(山西·大同)"><h3>🏔️ 万龙白登山滑雪场(山西·大同)</h3><ul class="dots"><li class="fld"><span class="fld-lab">位置</span><span class="fld-val">山西省大同市白登山森林公园内</span></li><li class="fld"><span class="fld-lab">开放雪道</span><div class="time-stack"><div class="chip-row"><span class="chip chip-lv1">4条</span></div><div class="chip-row"><span class="chip chip-lv2">6条</span></div><div class="chip-row"><span class="chip chip-lv3">6条</span></div><div class="fld-note">共16条·雪道总长8600余米;初期开放以公告为准</div></div></li><li class="fld"><span class="fld-lab">开放时间</span><div class="time-stack"><div class="chip-row"><span class="chip">日场:9:00–17:00</span><span class="chip">夜场:17:30–22:00</span></div></div></li><li class="fld"><span class="fld-lab">雪票</span><div class="time-stack"><div class="tk-grid"><div class="tk"><span>日场4小时双人(含雪具)</span><b>¥269.9</b></div><div class="tk"><span>日场全天双人(含雪具)</span><b>¥329.9</b></div><div class="tk"><span>夜场双人(含雪具)</span><b>¥229.4</b></div></div><div class="fld-note">双人=2人套票 · 已购</div></div></li></ul></div></div>
   <div class="tip">⚠️ 日场 9:00–17:00 · 夜场 17:30–22:00;开放雪道以雪场当日公告为准。</div>
+</section>
+<section id="costs">
+  <div class="sec-head"><div class="sec-ico">💰</div><div class="sec-txt"><h2>费用</h2><span class="sec-sub">机票+住宿+雪票 · 人均约 ¥2,185</span></div></div>
+  <div class="grid g2"><div class="hcard" data-card="costs|费用均摊"><table class="cost-table cost-outer"><tr><th></th><th>车票</th><th>住宿</th><th>雪票</th><th>合计</th></tr><tr><td><div class="cost-who"><img class="mimg" src="images/a/3545cfca7f.jpg" alt="幽助"><span>幽助</span></div></td><td>1455.0</td><td>451.1</td><td>279.1</td><td>¥2185.2</td></tr><tr><td><div class="cost-who"><img class="mimg" src="images/a/adbb15c823.jpg" alt="Z&amp;L"><span>Z&amp;L</span></div></td><td>1455.0</td><td>451.1</td><td>279.1</td><td>¥2185.2</td></tr></table></div></div>
 </section>
 
 <!-- ================= 清单 / 推荐应用 / 实用信息 已按需求移除 ================= -->
@@ -1549,7 +1554,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.9 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.13 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
