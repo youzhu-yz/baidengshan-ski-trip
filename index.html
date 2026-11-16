@@ -707,10 +707,12 @@ body.nav-top #chipbar{bottom:auto; top:calc(10px + env(safe-area-inset-top))}   
   padding:13px 14px;display:flex;align-items:center;gap:12px;position:relative}
 /* 头像在左、信息在右,左右两栏水平对齐(垂直居中) */
 .mcard.tbd{border-style:dashed;box-shadow:none;background:#fbfcfe}
+.dark .mcard.tbd{background:#161d29}   /* 深色:比卡片底更深一档,保持占位卡的弱化感 */
 .mava{width:40px;height:40px;flex:none;border-radius:50%;background:var(--accent-weak);
   display:flex;align-items:center;justify-content:center;font-size:19px;overflow:hidden}
 .mava img{width:100%;height:100%;object-fit:cover;display:block}
 .mcard.tbd .mava{background:#f0f2f7;opacity:.6}
+.dark .mcard.tbd .mava{background:#232c3d}
 .m-body{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;margin-right:5px}   /* 右侧内容保持居中对齐,并整体内移 5px */
 .mava{margin-left:5px}   /* 头像内移 5px */
 .mname{font-size:12px;font-weight:800}
@@ -1571,7 +1573,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.47 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.48 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
