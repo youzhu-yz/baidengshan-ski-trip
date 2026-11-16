@@ -571,7 +571,7 @@ body.nav-top #chipbar{bottom:auto; top:calc(10px + env(safe-area-inset-top))}   
 .dprev .dp:last-child::before{right:50%}
 .dprev .dp:only-child::before{display:none}
 .dprev .dp i{width:9px;height:9px;border-radius:50%;background:var(--card);border:2.5px solid var(--accent);
-  position:relative;z-index:1;margin:24px 0 5px;flex:none}   /* 上边距把圆点压到连线高度上 */
+  position:relative;z-index:1;margin:27.5px 0 5px;flex:none}   /* 上边距把圆点圆心压到连线上(border-box 下点高9px,圆心=31+1) */
 .dprev .dp.dp-start i{background:var(--accent)}   /* 起点实心 */
 .dprev .dp.dp-end i{background:var(--accent);border-color:var(--accent-deep)}   /* 终点深色实心 */
 .dprev .dp b{font-size:9.5px;font-weight:600;color:var(--muted);white-space:nowrap;max-width:100%;
@@ -1558,7 +1558,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </section>
 <section id="resorts">
   <div class="sec-head"><div class="sec-ico">🏔️</div><div class="sec-txt"><h2>雪场</h2><span class="sec-sub">日场 9:00–17:00 · 夜场 17:30–22:00 · 雪票已购</span></div></div>
-  <div class="grid g2"><div class="hcard" data-card="resorts|🏔️ 万龙白登山滑雪场(山西·大同)"><h3>🏔️ 万龙白登山滑雪场(山西·大同)</h3><ul class="dots"><li class="fld"><span class="fld-lab">位置</span><span class="fld-val">山西省大同市白登山森林公园内</span></li><li class="fld"><span class="fld-lab">开放雪道</span><div class="time-stack"><div class="chip-row"><span class="chip chip-lv1">初级道3条</span><span class="chip chip-lv2">中级道8条</span><span class="chip chip-lv3">高级道7条</span></div></div></li><li class="fld"><span class="fld-lab">开放时间</span><div class="time-stack"><div class="chip-row"><span class="chip">日场:9:00–17:00</span><span class="chip">夜场:17:30–22:00</span></div></div></li><li class="fld"><span class="fld-lab">雪票</span><div class="time-stack"><div class="tk-grid"><div class="tk"><span>日场双人(含雪具)</span><b>¥328.9</b></div><div class="tk"><span>日场4小时双人(含雪具)</span><b>¥269.9</b></div><div class="tk"><span>夜场双人(含雪具)</span><b>¥229.4</b></div></div></div></li></ul></div></div>
+  <div class="grid g2"><div class="hcard" data-card="resorts|🏔️ 万龙白登山滑雪场(山西·大同)"><h3>🏔️ 万龙白登山滑雪场(山西·大同)</h3><ul class="dots"><li class="fld"><span class="fld-lab">位置</span><span class="fld-val">山西省大同市白登山森林公园内</span></li><li class="fld"><span class="fld-lab">开放雪道</span><div class="time-stack"><div class="chip-row"><span class="chip chip-lv1">初级道3条</span><span class="chip chip-lv2">中级道8条</span><span class="chip chip-lv3">高级道7条</span></div></div></li><li class="fld"><span class="fld-lab">开放时间</span><div class="time-stack"><div class="chip-row"><span class="chip">日场:9:00–17:00</span><span class="chip">夜场:17:30–22:00</span></div></div></li><li class="fld"><span class="fld-lab">雪票</span><div class="time-stack"><div class="tk-grid"><div class="tk"><span>日场全天双人(含雪具)</span><b>¥328.9</b></div><div class="tk"><span>日场4小时双人(含雪具)</span><b>¥269.9</b></div><div class="tk"><span>夜场双人(含雪具)</span><b>¥229.4</b></div></div></div></li></ul></div></div>
   
 </section>
 <section id="costs">
@@ -1571,7 +1571,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.46 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.47 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
