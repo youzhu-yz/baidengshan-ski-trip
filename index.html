@@ -1195,6 +1195,11 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 /* ---------- 均摊费用 ---------- */
 #costs .hcard.has-zoom .zoom-btn{left:20px;right:auto;top:10px}   /* 左侧,对齐表头行垂直居中 */
 .cost-table{width:100%;border-collapse:collapse;font-size:12.5px}
+@media (max-width:359px){   /* 极窄屏:收紧汇总表内距与头像,防表格最小宽度撑破页面 */
+  .cost-table.cost-outer td{padding:8px 3px}
+  .cost-table.cost-outer th{padding:4px 2px 3px}
+  .cost-table .cost-who img,.cost-table .cost-th-who img{width:16px;height:16px}
+}
 .cost-table th,.cost-table td{vertical-align:middle}   /* 单元格上下居中(含第一列) */
 .cost-table th{font-size:11px;font-weight:600;color:var(--muted);text-align:right;
   padding:0 6px 5px;border-bottom:1px solid var(--line);white-space:nowrap}
@@ -1573,7 +1578,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.52 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.53 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
