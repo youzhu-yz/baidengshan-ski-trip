@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -401,7 +401,7 @@ body.nav-top #chipbar{bottom:auto; top:calc(10px + env(safe-area-inset-top))}   
 .wx-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   padding:16px 16px 12px;box-shadow:var(--shadow)}
 .wx-main{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 2px 12px}
-.wx-right{flex:none;display:flex;flex-direction:column;align-items:center;gap:7px}   /* 天气图标 + 正下方的「未来7天」入口 */
+.wx-right{flex:none;display:flex;flex-direction:column;align-items:center;gap:7px}   /* 天气图标 + 正下方的「未来15天」入口 */
 .wx-num{font-size:56px;font-weight:600;line-height:1;letter-spacing:-1.5px;color:var(--ink)}
 .wx-num span{font-size:19px;font-weight:500;letter-spacing:0;vertical-align:24px;color:var(--muted)}   /* °C 变小号吊在数字右上角 */
 .wx-desc{margin-top:9px;font-size:13px;color:var(--muted)}
@@ -516,7 +516,7 @@ body.nav-top #chipbar{bottom:auto; top:calc(10px + env(safe-area-inset-top))}   
 .dark .wx-ic{background:#1b2333}
 .dark .wx-refresh{background:#1b2333;border-color:#2b3547}
 .dark .wx-refresh.err{border-color:#5a3a3a}
-/* 未来7天:入口按钮(天气图标正下方) + 弹窗内逐日表(grid定列,各行同列对齐;天气列只放图标) */
+/* 未来15天:入口按钮(天气图标正下方) + 弹窗内逐日表(grid定列,各行同列对齐;天气列只放图标) */
 .wx-more{display:inline-flex;align-items:center;border:1px solid var(--line);
   background:transparent;color:var(--muted);font-size:11px;line-height:1;padding:6px 12px;border-radius:999px;
   cursor:pointer;font-family:inherit;-webkit-tap-highlight-color:transparent}
@@ -1496,7 +1496,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
     <h1>白登山,启动!</h1>
     <div class="sub">11/28(六) – 11/30(一) · 3天2晚</div>
     <div class="hero-chips">
-      <div class="hchip-row"><span>👥 2人</span><span>✈️ HO1065 去 / HO1066 回</span></div><div class="hchip-row"><span>🏔️ 万龙白登山</span><span>🏨 全季酒店</span></div>
+      <div class="hchip-row"><span>👥 2人</span><span>✈️ HO1065 去 / HO1066 回</span></div><div class="hchip-row"><span>🏔️ 大同白登山滑雪场</span><span>🏨 全季酒店</span></div>
     </div>
     <div class="countdown">
       <div class="cd-head" id="cdHead"><span id="cdTitle">距出发还有</span></div>
@@ -1523,7 +1523,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 <a class="ov-card ov-link" href="#weather" aria-label="前往天气"><div class="k">❄️ 天气<span class="ov-go">›</span></div><div class="v">-2°C · 阴</div><small>体感 -6°C · 西风2级</small></a>
 <a class="ov-card ov-link" href="#stay" aria-label="前往住宿"><div class="k">🏠 住宿<span class="ov-go">›</span></div><div class="v">全季(市政府博物馆店)</div><small>大床房×2
 2晚 · 不含早</small></a>
-<a class="ov-card ov-link" href="#resorts" aria-label="前往雪场"><div class="k">🏔️ 雪场<span class="ov-go">›</span></div><div class="v">万龙白登山滑雪场</div><small>日场 9:00–17:00
+<a class="ov-card ov-link" href="#resorts" aria-label="前往雪场"><div class="k">🏔️ 雪场<span class="ov-go">›</span></div><div class="v">大同白登山滑雪场</div><small>日场 9:00–17:00
 夜场 17:30–22:00</small></a>
 <a class="ov-card ov-link" href="#costs" aria-label="前往费用"><div class="k">💰 费用<span class="ov-go">›</span></div><div class="v"></div><div class="ov-extra"><div class="ov-pcost"><div class="pc-cell"><span class="pc-avs"><img src="images/a/3545cfca7f.jpg" alt=""></span><b>¥2435.4</b></div><div class="pc-cell"><span class="pc-avs"><img src="images/a/adbb15c823.jpg" alt=""></span><b>¥2435.4</b></div></div></div></a></div>
 </section>
@@ -1550,7 +1550,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </section>
 <section id="weather">
   <div class="sec-head"><div class="sec-ico">❄️</div><div class="sec-txt"><h2>天气</h2><span class="sec-sub">大同冬季干冷 · 出发前一周再核实</span></div></div>
-  <div id="wxBox"><div class="wx-card"><div class="wx-main"><div class="wx-left"><div class="wx-num">-2<span>°C</span></div><div class="wx-desc">阴 · 体感 -6°C</div></div><div class="wx-right"><div class="wx-ico">☁️</div><button class="wx-more" id="wxMore" type="button">未来7天</button></div></div><div class="wx-grid"><div class="wx-item"><span class="wx-ic">💨</span><div><em>风力风量</em><b>西风 2级</b></div></div><div class="wx-item"><span class="wx-ic">🔆</span><div><em>紫外线强度</em><b>最弱</b></div></div><div class="wx-item"><span class="wx-ic">💧</span><div><em>相对湿度</em><b>81%</b></div></div><div class="wx-item"><span class="wx-ic">🧥</span><div><em>穿衣指数</em><b>冷</b></div></div></div><div class="wx-sun" id="wxSun"><div class="wx-sun-heads"><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 8V2M8.6 4.4L11 2l2.4 2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日出</i></span><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 2v6M8.6 5.6L11 8l2.4-2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日落</i></span></div><div class="wx-sun-track"><span class="wx-sun-fill" id="wxSunFill" style="width:51.7%"></span><span class="wx-sun-moon" id="wxSunMoon" style="left:51.7%">🌙</span></div><div class="wx-sun-times"><b id="wxRiseTime">07:13</b><b id="wxSetTime">17:09</b></div></div><div class="wx-src"><span class="wx-src-l">数据来源·<a href="https://www.qweather.com/" target="_blank" rel="noopener">Qweather 和风天气</a></span><span class="wx-time">11-17 00:25</span><button class="wx-refresh" id="wxRefresh" type="button" aria-label="刷新数据">⟳</button></div></div></div>
+  <div id="wxBox"><div class="wx-card"><div class="wx-main"><div class="wx-left"><div class="wx-num">-2<span>°C</span></div><div class="wx-desc">阴 · 体感 -6°C</div></div><div class="wx-right"><div class="wx-ico">☁️</div><button class="wx-more" id="wxMore" type="button">未来15天</button></div></div><div class="wx-grid"><div class="wx-item"><span class="wx-ic">💨</span><div><em>风力风量</em><b>西风 2级</b></div></div><div class="wx-item"><span class="wx-ic">🔆</span><div><em>紫外线强度</em><b>最弱</b></div></div><div class="wx-item"><span class="wx-ic">💧</span><div><em>相对湿度</em><b>81%</b></div></div><div class="wx-item"><span class="wx-ic">🧥</span><div><em>穿衣指数</em><b>冷</b></div></div></div><div class="wx-sun" id="wxSun"><div class="wx-sun-heads"><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 8V2M8.6 4.4L11 2l2.4 2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日出</i></span><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 2v6M8.6 5.6L11 8l2.4-2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日落</i></span></div><div class="wx-sun-track"><span class="wx-sun-fill" id="wxSunFill" style="width:51.7%"></span><span class="wx-sun-moon" id="wxSunMoon" style="left:51.7%">🌙</span></div><div class="wx-sun-times"><b id="wxRiseTime">07:13</b><b id="wxSetTime">17:09</b></div></div><div class="wx-src"><span class="wx-src-l">数据来源·<a href="https://www.qweather.com/" target="_blank" rel="noopener">Qweather 和风天气</a></span><span class="wx-time">11-17 00:25</span><button class="wx-refresh" id="wxRefresh" type="button" aria-label="刷新数据">⟳</button></div></div></div>
 </section>
 <section id="stay">
   <div class="sec-head"><div class="sec-ico">🏠</div><div class="sec-txt"><h2>住宿</h2><span class="sec-sub">11/28–11/30 全季酒店(市政府博物馆店)·已定</span></div></div>
@@ -1571,7 +1571,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.45 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.46 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
@@ -1817,7 +1817,7 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
   /* ⟳ 按钮走 __wlReload 整页重建,重建后本段脚本重新执行即自动再拉一次 */
 })();
 
-/* ---------- 天气卡「未来 7 天」:点开复用卡片详情弹窗展示和风7天预报(grid定列对齐;无凭证版本隐藏入口) ---------- */
+/* ---------- 天气卡「未来 15 天」:点开复用卡片详情弹窗展示和风15天预报(grid定列对齐;无凭证版本隐藏入口) ---------- */
 (function(){
   var btn = document.getElementById('wxMore');
   if(!btn) return;
@@ -1839,7 +1839,7 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     var d = new Date(s + 'T00:00:00');
     return '周' + WK[d.getDay()] + ' ' + md;
   }
-  var cache = null;   // 本次页面周期内的7天数据(⟳ 重建页面后自然重拉)
+  var cache = null;   // 本次页面周期内的15天数据(⟳ 重建页面后自然重拉)
   var lastOpen = 0;
   function open7d(t){
     var now = Date.now();
@@ -1849,7 +1849,7 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
         title = document.getElementById('popTitle'),
         body = document.getElementById('popBody');
     if(!mask || !title || !body) return;
-    title.textContent = '未来 7 天 · 大同';
+    title.textContent = '未来 15 天 · 大同';
     title.classList.add('wx7-title');   // 单行+加粗加大;其他弹窗打开时自行移除
     body.innerHTML = '<div class="wx7-tip">正在获取预报…</div>';
     mask.classList.add('open');
@@ -1857,7 +1857,7 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     body.scrollTop = 0;
     if(cache){ render(body, cache); return; }
     t.classList.add('busy');
-    fetch('https://' + conf.host + '/v7/weather/7d?location=' + (conf.loc || '113.35,40.09') + '&key=' + conf.key)
+    fetch('https://' + conf.host + '/v7/weather/15d?location=' + (conf.loc || '113.35,40.09') + '&key=' + conf.key)
       .then(function(r){ if(!r.ok) throw new Error('http ' + r.status); return r.json(); })
       .then(function(j){
         if(j.code !== '200' || !j.daily || !j.daily.length) throw new Error('api ' + j.code);
