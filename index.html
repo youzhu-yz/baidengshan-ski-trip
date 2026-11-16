@@ -1220,10 +1220,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 .cost-detail{width:100%}   /* 明细表铺满弹窗宽:auto 布局下各列按内容比例分摊,行头不超宽 */
 .cost-detail{table-layout:auto;font-size:11px}
 .cost-item-h,.cost-detail th.cost-item{width:auto}
-/* 首列/合计列冻结,中间人物列加宽横滑(同屏约 5 列) */
-.cost-people{width:41px}
-.cost-sum-h{width:52px}
-.cost-detail td.cost-sum-td,.cost-detail th.cost-sum-h{width:52px}
+/* 首列/合计列冻结;各列不给固定宽,剩余宽度按内容比例均摊 */
 .cost-detail td:first-child,.cost-detail th:first-child{position:sticky;left:0;z-index:2;
   background:#fff;box-shadow:2px 0 5px rgba(16,24,40,.07)}
 .cost-detail td:last-child,.cost-detail th:last-child{position:sticky;right:0;z-index:2;
@@ -1575,7 +1572,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.35 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.36 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
