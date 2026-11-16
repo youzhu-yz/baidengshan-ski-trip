@@ -1575,7 +1575,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.38 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.39 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
@@ -1844,11 +1844,11 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     return '周' + WK[d.getDay()] + ' ' + md;
   }
   var cache = null;   // 本次页面周期内的7天数据(⟳ 重建页面后自然重拉)
-  /* 事件委托到 document:按钮节点即使被重建/时序异常,点击也永远有效 */
-  document.addEventListener('click', function(e){
-    if(!e.target.closest) return;
-    var t = e.target.closest('#wxMore');
-    if(!t || t.hidden) return;
+  var lastOpen = 0;
+  function open7d(t){
+    var now = Date.now();
+    if(now - lastOpen < 400) return;   // pointerup+click 双通道去重
+    lastOpen = now;
     var mask = document.getElementById('popMask'),
         title = document.getElementById('popTitle'),
         body = document.getElementById('popBody');
@@ -1872,7 +1872,24 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
         body.innerHTML = '<div class="wx7-tip">拉取失败，网络恢复后再点重试</div>';
       })
       .then(function(){ t.classList.remove('busy'); });
+  }
+  /* 事件委托到 document:按钮节点即使被重建/时序异常,点击也永远有效 */
+  document.addEventListener('click', function(e){
+    if(!e.target.closest) return;
+    var t = e.target.closest('#wxMore');
+    if(!t || t.hidden) return;
+    open7d(t);
   });
+  /* 兜底通道:pointerup 直接触发——个别 WebView/浏览器不合成 click 事件(长按/触摸拦截),
+     pointerup 在鼠标与触屏上都先于 click 触发;400ms 防重保证两通道只开一次 */
+  if(window.PointerEvent){
+    document.addEventListener('pointerup', function(e){
+      if(e.button > 0 || !e.target.closest) return;
+      var t = e.target.closest('#wxMore');
+      if(!t || t.hidden) return;
+      open7d(t);
+    });
+  }
   function render(body, days){
     var rows = days.map(function(d, i){
       return '<div class="wx7-row"><span class="d">' + dateLabel(d.fxDate, i) + '</span>'
