@@ -1217,6 +1217,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 /* 明细表:窄屏横向滚动 */
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tbl-scroll::-webkit-scrollbar{display:none}   /* 滚动条常驻不消失:直接隐藏(仍可拖动) */
+.cost-detail{width:auto;margin:0 auto}   /* 明细表不拉伸满宽:各列按内容自适应,行头不再被撑宽 */
 .cost-detail{table-layout:auto;font-size:11px}
 .cost-item-h,.cost-detail th.cost-item{width:auto}
 /* 首列/合计列冻结,中间人物列加宽横滑(同屏约 5 列) */
@@ -1574,7 +1575,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.31 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.32 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
