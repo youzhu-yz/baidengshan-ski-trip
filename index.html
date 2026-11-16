@@ -1217,8 +1217,8 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 /* 明细表:窄屏横向滚动 */
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tbl-scroll::-webkit-scrollbar{display:none}   /* 滚动条常驻不消失:直接隐藏(仍可拖动) */
-.cost-detail{table-layout:fixed;font-size:11px}
-.cost-item-h,.cost-detail th.cost-item{width:61px}
+.cost-detail{table-layout:auto;font-size:11px}
+.cost-item-h,.cost-detail th.cost-item{width:auto}
 /* 首列/合计列冻结,中间人物列加宽横滑(同屏约 5 列) */
 .cost-people{width:41px}
 .cost-sum-h{width:52px}
@@ -1230,8 +1230,8 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 .cost-detail td,.cost-detail .cost-people{padding:3px 1px;font-size:10px}
 .cost-detail td:nth-child(even),.cost-detail th:nth-child(even){background:#f5f8fc}   /* 数据列斑马纹 */
 .cost-detail td,.cost-detail th{text-align:center!important}   /* 弹窗全部格子居中(含首列/合计行列) */
-.cost-detail .cost-item{width:61px;white-space:normal;line-height:1.2;
-  padding:3.5px 2px 3.5px 1px;font-size:10px}   /* 窄列小字,防三行 */
+.cost-detail .cost-item{width:auto;white-space:nowrap;line-height:1.2;
+  padding:3.5px 4px 3.5px 2px;font-size:10.5px}   /* 行头自适应内容宽度 */
 .cost-detail .cost-item-h,.cost-detail .cost-people{padding-top:3px}
 .cost-sum-h,.cost-detail td.cost-sum-td{font-weight:800;color:var(--accent-deep)}   /* 合计列 */
 /* 转置明细表:表头=人(头像上名字下),首列=费用项目 */
@@ -1557,7 +1557,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </section>
 <section id="stay">
   <div class="sec-head"><div class="sec-ico">🏠</div><div class="sec-txt"><h2>住宿</h2><span class="sec-sub">11/28–11/30 全季酒店(市政府博物馆店)·已定</span></div></div>
-  <div class="grid g2"><div class="hcard" data-card="stay|🏠 全季酒店(大同市政府博物馆店)"><h3>🏠 全季酒店(大同市政府博物馆店)</h3><div class="h-sub">11/28 – 11/30 · 2晚</div><ul class="dots"><li class="lab"><span class="li-lab">房型</span><span class="li-main">大床房 ×2</span><span class="li-note">2间夜 · 不含早</span></li><li class="fld"><span class="fld-lab">优势</span><div class="time-stack"><div class="chip-row"><span class="chip">雪场接送</span><span class="chip">洗衣机</span><span class="chip">烘干机</span></div></div></li><li class="lab"><span class="li-lab">距雪场</span><span class="li-main">车程约10分钟(5公里)</span></li><li class="lab"><span class="li-lab">地址</span><span class="li-main"><button class="li-cp" type="button" aria-label="复制" data-copy="山西省大同市平城区云州街与太和路交汇处东北角"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>山西省大同市平城区云州街与太和路交汇处东北角</span></li></ul></div></div>
+  <div class="grid g2"><div class="hcard" data-card="stay|🏠 全季酒店(大同市政府博物馆店)"><h3>🏠 全季酒店(大同市政府博物馆店)</h3><div class="h-sub">11/28 – 11/30 · 2晚</div><ul class="dots"><li class="lab"><span class="li-lab">房型</span><span class="li-main">大床房 ×2</span><span class="li-note">2间夜 · 不含早</span></li><li class="lab"><span class="li-lab">优势</span><span class="li-main"><span class="chip-row"><span class="chip">雪场接送</span><span class="chip">洗衣机</span><span class="chip">烘干机</span></span></span></li><li class="lab"><span class="li-lab">距雪场</span><span class="li-main">车程约10分钟(5公里)</span></li><li class="lab"><span class="li-lab">地址</span><span class="li-main"><button class="li-cp" type="button" aria-label="复制" data-copy="山西省大同市平城区云州街与太和路交汇处东北角"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>山西省大同市平城区云州街与太和路交汇处东北角</span></li></ul></div></div>
 </section>
 <section id="resorts">
   <div class="sec-head"><div class="sec-ico">🏔️</div><div class="sec-txt"><h2>雪场</h2><span class="sec-sub">日场 9:00–17:00 · 夜场 17:30–22:00 · 雪票已购</span></div></div>
@@ -1574,7 +1574,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.30 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.31 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
