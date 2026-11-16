@@ -378,6 +378,11 @@ body.nav-top #chipbar{bottom:auto; top:calc(10px + env(safe-area-inset-top))}   
   box-shadow:0 1px 2px rgba(16,24,40,.15)}
 .ov-pcost b{font-size:10.5px;font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums}
 .ov-pcost .pc-dot{width:26px;height:26px;border-radius:50%;background:var(--accent-weak)}   /* 缺头像占位 */
+.ov-span2 .ov-pcost{grid-template-columns:repeat(auto-fit,minmax(64px,1fr));gap:12px;align-items:center;
+  margin-top:3px}   /* 跨两列的费用卡:每人一列放宽,头像金额放大 */
+.ov-span2 .ov-pcost img,.ov-span2 .ov-pcost .pc-dot{width:32px;height:32px}
+.ov-span2 .ov-pcost b{font-size:13.5px}
+.ov-span2 .v{font-size:15px;font-weight:800;color:var(--accent-deep)}   /* 合计/人均 数字更醒目 */
 @media (max-width:379px){.ov-pcost b{font-size:9.5px}}
 .ov-avrow.nolab{justify-content:center}   /* 无标签头像行:居中 */
 .ov-avrow.nolab .avstack{margin-left:0}
@@ -1470,11 +1475,11 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
   <button class="bar-arrow" id="barPrev" type="button" aria-label="上一板块">‹</button>
   <div class="chips" id="chips">
     <a href="#overview" class="on"><span class="chip-ico">📋</span><span class="chip-txt">总览</span></a>
+<a href="#members"><span class="chip-ico">👥</span><span class="chip-txt">人员</span></a>
 <a href="#days"><span class="chip-ico">🗓️</span><span class="chip-txt">行程</span></a>
 <a href="#flights"><span class="chip-ico">🎫</span><span class="chip-txt">航班</span></a>
-<a href="#members"><span class="chip-ico">👥</span><span class="chip-txt">人员</span></a>
-<a href="#stay"><span class="chip-ico">🏠</span><span class="chip-txt">住宿</span></a>
 <a href="#weather"><span class="chip-ico">❄️</span><span class="chip-txt">天气</span></a>
+<a href="#stay"><span class="chip-ico">🏠</span><span class="chip-txt">住宿</span></a>
 <a href="#resorts"><span class="chip-ico">🏔️</span><span class="chip-txt">雪场</span></a>
 <a href="#costs"><span class="chip-ico">💰</span><span class="chip-txt">费用</span></a>
   </div>
@@ -1518,14 +1523,21 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
   <div class="sec-head"><div class="sec-ico">📋</div><div class="sec-txt"><h2>总览</h2><span class="sec-sub">关键信息一屏速览</span></div></div>
   <div class="ov-grid"><a class="ov-card ov-link" href="#members" aria-label="前往日期 · 人员"><div class="k">📅 日期 · 人员<span class="ov-go">›</span></div><div class="v">11/28 – 11/30</div><small>3天2晚 · 2人</small></a>
 <a class="ov-card ov-link" href="#days" aria-label="前往每日行程"><div class="k">🎿 每日行程<span class="ov-go">›</span></div><div class="v">1.5个日场 + 2个夜场</div><small>双人套票（含雪具）</small></a>
-<a class="ov-card ov-link" href="#weather" aria-label="前往天气"><div class="k">❄️ 天气<span class="ov-go">›</span></div><div class="v">-2°C · 阴</div><small>体感 -6°C · 西风2级</small></a>
 <a class="ov-card ov-link" href="#flights" aria-label="前往航班"><div class="k">✈️ 航班<span class="ov-go">›</span></div><div class="v">上海虹桥T2 ⇄ 大同云冈</div><small>去 11/28 07:10 - 10:10
 回 11/30 10:55 - 13:20</small></a>
+<a class="ov-card ov-link" href="#weather" aria-label="前往天气"><div class="k">❄️ 天气<span class="ov-go">›</span></div><div class="v">-2°C · 阴</div><small>体感 -6°C · 西风2级</small></a>
 <a class="ov-card ov-link" href="#stay" aria-label="前往住宿"><div class="k">🏠 住宿<span class="ov-go">›</span></div><div class="v">全季(市政府博物馆店)</div><small>大床房×2
 2晚 · 不含早</small></a>
 <a class="ov-card ov-link" href="#resorts" aria-label="前往雪场"><div class="k">🏔️ 雪场<span class="ov-go">›</span></div><div class="v">万龙白登山滑雪场</div><small>日场 9:00–17:00
 夜场 17:30–22:00</small></a>
-<a class="ov-card ov-link" href="#costs" aria-label="前往费用"><div class="k">💰 费用<span class="ov-go">›</span></div><div class="v">合计 ¥4,870 · 人均 ¥2435</div><div class="ov-extra"><div class="ov-pcost"><div class="pc-cell"><span class="pc-avs"><img src="images/a/3545cfca7f.jpg" alt=""></span><b>¥2435.4</b></div><div class="pc-cell"><span class="pc-avs"><img src="images/a/adbb15c823.jpg" alt=""></span><b>¥2435.4</b></div></div></div></a></div>
+<a class="ov-card ov-link ov-span2" href="#costs" aria-label="前往费用"><div class="k">💰 费用<span class="ov-go">›</span></div><div class="v">合计 ¥4,870 · 人均 ¥2435</div><div class="ov-extra"><div class="ov-pcost"><div class="pc-cell"><span class="pc-avs"><img src="images/a/3545cfca7f.jpg" alt=""></span><b>¥2435.4</b></div><div class="pc-cell"><span class="pc-avs"><img src="images/a/adbb15c823.jpg" alt=""></span><b>¥2435.4</b></div></div></div></a></div>
+</section>
+<section id="members">
+  <div class="sec-head"><div class="sec-ico">👥</div><div class="sec-txt"><h2>同行</h2><span class="sec-sub">2人 · 幽助、Z&amp;L</span></div></div>
+  <div class="mgrid">
+    <div class="mcard" data-card="members|幽助"><div class="mava"><img src="images/a/3545cfca7f.jpg" alt=""></div><div class="m-body"><div class="mname">幽助</div></div></div>
+<div class="mcard" data-card="members|Z&amp;L"><div class="mava"><img src="images/a/adbb15c823.jpg" alt=""></div><div class="m-body"><div class="mname">Z&amp;L</div></div></div>
+  </div>
 </section>
 <section id="days">
   <div class="sec-head"><div class="sec-ico">🗓️</div><div class="sec-txt"><h2>行程</h2><span class="sec-sub">D1 首滑+夜场 · D2 全天 · D3 返程</span></div></div>
@@ -1539,20 +1551,13 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
   <div class="fcard" data-card="flights|HO1065"><span class="fdir">去程</span><div class="fhead"><div class="fhead2"><span class="fno">HO1065</span><span class="fairline">吉祥航空</span></div><span class="fdate">11/28 周六</span></div><div class="froute"><div class="fport"><div class="ftime">07:10</div><div class="fair">上海虹桥 T2</div><div class="fcode">SHA</div></div><div class="fmid"><span class="fplane">✈</span><div class="fdur">3 小时</div></div><div class="fport"><div class="ftime">10:10</div><div class="fair">大同云冈</div><div class="fcode">DAT</div></div></div><div class="fexp"><div class="fexp-wrap"><div class="fexp-body"><div class="trow2"><div class="tico">🚕</div><div class="tmain"><div class="tname"><span class="veh">打车</span><span class="tnote-inline">约20分钟</span></div><div class="tstops"><div class="tstop"><b>大同云冈</b><i>10:40</i></div><span class="tsarrow">→</span><div class="tstop"><b>全季酒店</b><i>11:00</i></div></div></div></div><div class="trow2"><div class="tico">🚕</div><div class="tmain"><div class="tname"><span class="veh">打车</span><span class="tnote-inline">约10分钟</span></div><div class="tstops"><div class="tstop"><b>全季酒店</b><i>12:30</i></div><span class="tsarrow">→</span><div class="tstop"><b>白登山雪场</b><i>12:40</i></div></div></div></div></div></div><button class="fexp-btn" type="button" aria-label="分段路线"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button></div></div>
 <div class="fcard" data-card="flights|HO1066"><span class="fdir">返程</span><div class="fhead"><div class="fhead2"><span class="fno">HO1066</span><span class="fairline">吉祥航空</span></div><span class="fdate">11/30 周一</span></div><div class="froute"><div class="fport"><div class="ftime">10:55</div><div class="fair">大同云冈</div><div class="fcode">DAT</div></div><div class="fmid"><span class="fplane">✈</span><div class="fdur">2 小时 25 分</div></div><div class="fport"><div class="ftime">13:20</div><div class="fair">上海虹桥 T2</div><div class="fcode">SHA</div></div></div><div class="fexp"><div class="fexp-wrap"><div class="fexp-body"><div class="trow2"><div class="tico">🚕</div><div class="tmain"><div class="tname"><span class="veh">打车</span><span class="tnote-inline">约20~30分钟</span></div><div class="tstops"><div class="tstop"><b>全季酒店</b><i>08:30</i></div><span class="tsarrow">→</span><div class="tstop"><b>大同</b><i>08:55</i></div></div></div></div></div></div><button class="fexp-btn" type="button" aria-label="分段路线"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button></div></div>
 </section>
-<section id="members">
-  <div class="sec-head"><div class="sec-ico">👥</div><div class="sec-txt"><h2>同行</h2><span class="sec-sub">2人 · 幽助、Z&amp;L</span></div></div>
-  <div class="mgrid">
-    <div class="mcard" data-card="members|幽助"><div class="mava"><img src="images/a/3545cfca7f.jpg" alt=""></div><div class="m-body"><div class="mname">幽助</div></div></div>
-<div class="mcard" data-card="members|Z&amp;L"><div class="mava"><img src="images/a/adbb15c823.jpg" alt=""></div><div class="m-body"><div class="mname">Z&amp;L</div></div></div>
-  </div>
-</section>
-<section id="stay">
-  <div class="sec-head"><div class="sec-ico">🏠</div><div class="sec-txt"><h2>住宿</h2><span class="sec-sub">11/28–11/30 全季酒店(市政府博物馆店)·已定</span></div></div>
-  <div class="grid g2"><div class="hcard" data-card="stay|🏠 全季酒店(大同市政府博物馆店)"><h3>🏠 全季酒店(大同市政府博物馆店)</h3><div class="h-sub">11/28 – 11/30 · 2晚</div><ul class="dots"><li class="lab"><span class="li-lab">房型</span><span class="li-main">大床房 ×2</span><span class="li-note">2间夜 · 不含早</span></li><li class="lab"><span class="li-lab">优势</span><span class="li-main">雪场接送 · 洗衣机 · 烘干机</span></li><li class="lab"><span class="li-lab">地址</span><span class="li-main"><button class="li-cp" type="button" aria-label="复制" data-copy="山西省大同市平城区云州街与太和路交汇处东北角"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>山西省大同市平城区云州街与太和路交汇处东北角</span></li><li class="lab"><span class="li-lab">距雪场</span><span class="li-main">车程约10分钟(5公里)</span></li></ul></div></div>
-</section>
 <section id="weather">
   <div class="sec-head"><div class="sec-ico">❄️</div><div class="sec-txt"><h2>天气</h2><span class="sec-sub">大同冬季干冷 · 出发前一周再核实</span></div></div>
   <div id="wxBox"><div class="wx-card"><div class="wx-main"><div class="wx-left"><div class="wx-num">-2<span>°C</span></div><div class="wx-desc">阴 · 体感 -6°C</div></div><div class="wx-right"><div class="wx-ico">☁️</div><button class="wx-more" id="wxMore" type="button">未来7天</button></div></div><div class="wx-grid"><div class="wx-item"><span class="wx-ic">💨</span><div><em>风力风量</em><b>西风 2级</b></div></div><div class="wx-item"><span class="wx-ic">🔆</span><div><em>紫外线强度</em><b>最弱</b></div></div><div class="wx-item"><span class="wx-ic">💧</span><div><em>相对湿度</em><b>81%</b></div></div><div class="wx-item"><span class="wx-ic">🧥</span><div><em>穿衣指数</em><b>冷</b></div></div></div><div class="wx-sun" id="wxSun"><div class="wx-sun-heads"><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 8V2M8.6 4.4L11 2l2.4 2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日出</i></span><span class="wx-sun-h"><span class="wx-sic"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="13.6" r="4.2" fill="currentColor"/><path d="M3.6 13.6h2.2M16.2 13.6h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M11 2v6M8.6 5.6L11 8l2.4-2.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><i>日落</i></span></div><div class="wx-sun-track"><span class="wx-sun-fill" id="wxSunFill" style="width:51.7%"></span><span class="wx-sun-moon" id="wxSunMoon" style="left:51.7%">🌙</span></div><div class="wx-sun-times"><b id="wxRiseTime">07:13</b><b id="wxSetTime">17:09</b></div></div><div class="wx-src"><span class="wx-src-l">数据来源·<a href="https://www.qweather.com/" target="_blank" rel="noopener">Qweather 和风天气</a></span><span class="wx-time">11-17 00:25</span><button class="wx-refresh" id="wxRefresh" type="button" aria-label="刷新数据">⟳</button></div></div></div>
+</section>
+<section id="stay">
+  <div class="sec-head"><div class="sec-ico">🏠</div><div class="sec-txt"><h2>住宿</h2><span class="sec-sub">11/28–11/30 全季酒店(市政府博物馆店)·已定</span></div></div>
+  <div class="grid g2"><div class="hcard" data-card="stay|🏠 全季酒店(大同市政府博物馆店)"><h3>🏠 全季酒店(大同市政府博物馆店)</h3><div class="h-sub">11/28 – 11/30 · 2晚</div><ul class="dots"><li class="lab"><span class="li-lab">房型</span><span class="li-main">大床房 ×2</span><span class="li-note">2间夜 · 不含早</span></li><li class="fld"><span class="fld-lab">优势</span><div class="time-stack"><div class="chip-row"><span class="chip">雪场接送</span><span class="chip">洗衣机</span><span class="chip">烘干机</span></div></div></li><li class="lab"><span class="li-lab">距雪场</span><span class="li-main">车程约10分钟(5公里)</span></li><li class="lab"><span class="li-lab">地址</span><span class="li-main"><button class="li-cp" type="button" aria-label="复制" data-copy="山西省大同市平城区云州街与太和路交汇处东北角"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>山西省大同市平城区云州街与太和路交汇处东北角</span></li></ul></div></div>
 </section>
 <section id="resorts">
   <div class="sec-head"><div class="sec-ico">🏔️</div><div class="sec-txt"><h2>雪场</h2><span class="sec-sub">日场 9:00–17:00 · 夜场 17:30–22:00 · 雪票已购</span></div></div>
@@ -1569,7 +1574,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.28 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.29 分享版</div>
   <div style="margin-top:4px">📦 本页为离线单文件版,含全部信息,可直接转发</div>
 </footer>
 
