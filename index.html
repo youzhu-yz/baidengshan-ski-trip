@@ -1581,7 +1581,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.63 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.64 分享版</div>
   
 </footer>
 
@@ -4024,16 +4024,18 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     } else if(bt.t === '文本'){
       var p = document.createElement('p'); p.textContent = bt.c || ' '; d.appendChild(p);
     } else if(bt.t === '胶囊'){
-      /* 内容=顿号分隔的多项,说明=等级(初级/中级/高级)→ 对应配色胶囊 */
+      /* 内容=顿号分隔的多项,说明=等级(初级/中级/高级)→ 对应配色胶囊;每行最多 5 个,行内居中 */
       var lvCls = /初级/.test(bt.n || '') ? ' chip-lv1' : (/中级/.test(bt.n || '') ? ' chip-lv2'
                  : (/高级/.test(bt.n || '') ? ' chip-lv3' : ''));
-      var cr = document.createElement('div'); cr.className = 'chip-row pop-chiprow';
-      (bt.c || '').split(/[、,，]/).forEach(function(x){
-        x = x.trim(); if(!x) return;
-        var sp = document.createElement('span'); sp.className = 'chip' + lvCls; sp.textContent = x;
-        cr.appendChild(sp);
-      });
-      d.appendChild(cr);
+      var names = (bt.c || '').split(/[、,，]/).map(function(x){ return x.trim(); }).filter(Boolean);
+      for(var ri = 0; ri < names.length; ri += 5){
+        var cr = document.createElement('div'); cr.className = 'chip-row pop-chiprow';
+        names.slice(ri, ri + 5).forEach(function(x){
+          var sp = document.createElement('span'); sp.className = 'chip' + lvCls; sp.textContent = x;
+          cr.appendChild(sp);
+        });
+        d.appendChild(cr);
+      }
     } else if(bt.t === '提示'){
       var tb = document.createElement('div');
       tb.className = 'tipbox' + (bt.c && bt.c.indexOf('此内容涉及敏感信息') >= 0 ? ' sec-hint'
