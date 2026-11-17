@@ -1157,10 +1157,18 @@ ul.dots li.fld::before{display:none!important}   /* 屏蔽通用点号,只留标
 .chip.chip-lv1{background:#2f9e5f;color:#fff;border:1px solid #2f9e5f}   /* 雪道等级:实心徽章,与普通淡蓝胶囊拉开差距 */
 .chip.chip-lv2{background:#1f6fd6;color:#fff;border:1px solid #1f6fd6}   /* 中级=实心蓝(普通胶囊是淡蓝底深蓝字) */
 .chip.chip-lv3{background:#2b2f36;color:#fff;border:1px solid #2b2f36}   /* 高级=黑 */
-.chip.lv-map{cursor:pointer;padding-right:17px;position:relative}   /* 可点击看雪道图的等级胶囊:右侧小箭头提示 */
+.chip.lv-map{cursor:pointer;padding-right:17px;position:relative}   /* 可点击看雪道名的等级胶囊:右侧小箭头提示 */
 .chip.lv-map::after{content:"›";position:absolute;right:6px;top:48%;transform:translateY(-50%);
   font-weight:800;font-size:12px;opacity:.8}
 .chip.lv-map:active{filter:brightness(.88)}
+.lv-pop{position:fixed;z-index:80;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 12px 32px rgba(16,24,40,.2);padding:10px 12px;max-width:min(340px,88vw);display:none}
+.lv-pop.open{display:block}
+.lv-pop::before{content:"";position:absolute;top:-5.5px;left:20px;width:9px;height:9px;background:var(--card);
+  border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+.lv-pop.up::before{top:auto;bottom:-5.5px;border:none;border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);transform:rotate(45deg)}
+.lv-pop .chip-row{justify-content:flex-start;margin:0}
 .dark .chip.chip-lv1{background:#268a53;color:#fff;border-color:#268a53}
 .dark .chip.chip-lv2{background:#2f7de0;color:#fff;border-color:#2f7de0}   /* 深色模式:亮实心蓝,与暗蓝普通胶囊(#1d3450)明显区分 */
 .dark .chip.chip-lv3{background:#0d1117;color:#f2f5f9;border-color:#41495a}
@@ -1597,7 +1605,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.77 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.78 分享版</div>
   
 </footer>
 
@@ -1622,7 +1630,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
     <div class="pop-body" id="popBody"></div>
   </div>
 </div>
-<script id="carddata" type="application/json">{"costs|费用均摊": {"tabs": [{"name": "费用明细", "blocks": [{"t": "HTML", "c": "<div class=\"tbl-scroll\"><table class=\"cost-table cost-detail\"><tr><th class=\"cost-item-h\"></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/3545cfca7f.jpg\" alt=\"幽助\"><span>幽助</span></div></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/adbb15c823.jpg\" alt=\"Z&amp;L\"><span>Z&amp;L</span></div></th><th class=\"cost-sum-h\">合计</th></tr><tr><th class=\"cost-item\">机票</th><td>1455.0</td><td>1455.0</td><td class=\"cost-sum-td\">2910.0</td></tr><tr><th class=\"cost-item\">车费</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr><th class=\"cost-item\">住宿</th><td>451.1</td><td>451.1</td><td class=\"cost-sum-td\">902.2</td></tr><tr><th class=\"cost-item\">雪票</th><td>529.3/<wbr>559.3</td><td>529.3/<wbr>559.3</td><td class=\"cost-sum-td\">1058.6/<wbr>1118.6</td></tr><tr><th class=\"cost-item\">吃饭</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr class=\"cost-total-row\"><th class=\"cost-item\">合计</th><td>2435.4/<wbr>2465.4</td><td>2435.4/<wbr>2465.4</td><td class=\"cost-sum-td\">4870.8/<wbr>4930.8</td></tr></table></div>"}]}, {"name": "费用记录", "blocks": [{"t": "图片", "c": "images/a/0e385ff0f5.jpg", "n": ""}, {"t": "提示", "c": "机票订单", "n": ""}, {"t": "图片", "c": "images/a/5bd400ee46.jpg", "n": ""}, {"t": "提示", "c": "酒店订单", "n": ""}, {"t": "图片", "c": "images/a/2271f1a991.jpg", "n": ""}, {"t": "提示", "c": "雪票​订单", "n": ""}]}]}, "resorts|🏔️大同万龙白登山滑雪场": {"tabs": [{"name": "雪道图", "blocks": [], "subs": [], "cols": 0}, {"name": "雪票信息", "blocks": [], "subs": [{"name": "DAY 1 日场", "blocks": [{"t": "图片", "c": "images/a/b9cdf69075.jpg", "n": ""}, {"t": "提示", "c": "4小时", "n": ""}, {"t": "图片", "c": "images/a/511cfadc23.jpg", "n": ""}, {"t": "提示", "c": "全天", "n": ""}], "subs": []}, {"name": "DAY 1 夜场", "blocks": [{"t": "图片", "c": "images/a/124f8b03c1.jpg", "n": ""}], "subs": []}, {"name": "DAY 2 日场", "blocks": [{"t": "图片", "c": "images/a/12063db6e8.jpg", "n": ""}], "subs": []}, {"name": "DAY 2 夜场", "blocks": [{"t": "图片", "c": "images/a/7ecd0b8de8.jpg", "n": ""}], "subs": []}], "cols": 0}]}, "stay|🏠 全季酒店(博物馆店)": {"tabs": [{"name": "入住凭证", "blocks": [{"t": "图片", "c": "images/a/a5c1273b6c.png", "n": ""}], "subs": [], "cols": 0}, {"name": "酒店照片", "blocks": [{"t": "图片", "c": "images/a/1eab225af8.jpg", "n": ""}, {"t": "图片", "c": "images/a/95761b4dc9.jpg", "n": ""}, {"t": "图片", "c": "images/a/e24661a5c3.jpg", "n": ""}, {"t": "图片", "c": "images/a/41c7b9bf43.jpg", "n": ""}], "subs": [], "cols": 0}]}, "flights|HO1065": {"tabs": [{"name": "航班信息", "blocks": [{"t": "字段", "c": "顾宏刚 35J / 张露 35K", "n": "座位"}, {"t": "字段", "c": "待定", "n": "值机柜台"}], "subs": [], "cols": 0}]}, "flights|HO1066": {"tabs": [{"name": "航班信息", "blocks": [{"t": "字段", "c": "顾宏刚 34B / 张露 34A", "n": "座位"}, {"t": "字段", "c": "待定", "n": "值机柜台"}], "subs": [], "cols": 0}]}}</script>
+<script id="carddata" type="application/json">{"costs|费用均摊": {"tabs": [{"name": "费用明细", "blocks": [{"t": "HTML", "c": "<div class=\"tbl-scroll\"><table class=\"cost-table cost-detail\"><tr><th class=\"cost-item-h\"></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/3545cfca7f.jpg\" alt=\"幽助\"><span>幽助</span></div></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/adbb15c823.jpg\" alt=\"Z&amp;L\"><span>Z&amp;L</span></div></th><th class=\"cost-sum-h\">合计</th></tr><tr><th class=\"cost-item\">机票</th><td>1455.0</td><td>1455.0</td><td class=\"cost-sum-td\">2910.0</td></tr><tr><th class=\"cost-item\">车费</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr><th class=\"cost-item\">住宿</th><td>451.1</td><td>451.1</td><td class=\"cost-sum-td\">902.2</td></tr><tr><th class=\"cost-item\">雪票</th><td>529.3/<wbr>559.3</td><td>529.3/<wbr>559.3</td><td class=\"cost-sum-td\">1058.6/<wbr>1118.6</td></tr><tr><th class=\"cost-item\">吃饭</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr class=\"cost-total-row\"><th class=\"cost-item\">合计</th><td>2435.4/<wbr>2465.4</td><td>2435.4/<wbr>2465.4</td><td class=\"cost-sum-td\">4870.8/<wbr>4930.8</td></tr></table></div>"}]}, {"name": "费用记录", "blocks": [{"t": "图片", "c": "images/a/0e385ff0f5.jpg", "n": ""}, {"t": "提示", "c": "机票订单", "n": ""}, {"t": "图片", "c": "images/a/5bd400ee46.jpg", "n": ""}, {"t": "提示", "c": "酒店订单", "n": ""}, {"t": "图片", "c": "images/a/2271f1a991.jpg", "n": ""}, {"t": "提示", "c": "雪票​订单", "n": ""}]}]}, "resorts|🏔️大同万龙白登山滑雪场": {"tabs": [{"name": "雪道图", "blocks": [{"t": "图片", "c": "images/a/7a085ad322.jpg", "n": ""}], "subs": [], "cols": 0}, {"name": "雪票信息", "blocks": [], "subs": [{"name": "DAY 1 日场", "blocks": [{"t": "图片", "c": "images/a/b9cdf69075.jpg", "n": ""}, {"t": "提示", "c": "4小时", "n": ""}, {"t": "图片", "c": "images/a/511cfadc23.jpg", "n": ""}, {"t": "提示", "c": "全天", "n": ""}], "subs": []}, {"name": "DAY 1 夜场", "blocks": [{"t": "图片", "c": "images/a/124f8b03c1.jpg", "n": ""}], "subs": []}, {"name": "DAY 2 日场", "blocks": [{"t": "图片", "c": "images/a/12063db6e8.jpg", "n": ""}], "subs": []}, {"name": "DAY 2 夜场", "blocks": [{"t": "图片", "c": "images/a/7ecd0b8de8.jpg", "n": ""}], "subs": []}], "cols": 0}]}, "stay|🏠 全季酒店(博物馆店)": {"tabs": [{"name": "入住凭证", "blocks": [{"t": "图片", "c": "images/a/a5c1273b6c.png", "n": ""}], "subs": [], "cols": 0}, {"name": "酒店照片", "blocks": [{"t": "图片", "c": "images/a/1eab225af8.jpg", "n": ""}, {"t": "图片", "c": "images/a/95761b4dc9.jpg", "n": ""}, {"t": "图片", "c": "images/a/e24661a5c3.jpg", "n": ""}, {"t": "图片", "c": "images/a/41c7b9bf43.jpg", "n": ""}], "subs": [], "cols": 0}]}, "flights|HO1065": {"tabs": [{"name": "航班信息", "blocks": [{"t": "字段", "c": "顾宏刚 35J / 张露 35K", "n": "座位"}, {"t": "字段", "c": "待定", "n": "值机柜台"}], "subs": [], "cols": 0}]}, "flights|HO1066": {"tabs": [{"name": "航班信息", "blocks": [{"t": "字段", "c": "顾宏刚 34B / 张露 34A", "n": "座位"}, {"t": "字段", "c": "待定", "n": "值机柜台"}], "subs": [], "cols": 0}]}}</script>
 
 <!-- ================= 图片全屏查看 ================= -->
 <div class="imgview" id="imgView">
@@ -1927,39 +1935,41 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
   /* 关闭走弹窗自己的 × / 背景点击(卡片详情 IIFE 的 close 兼容清空 body) */
 })();
 
-/* ---------- 雪场「开放雪道」等级胶囊 → 雪道图浮窗:该等级雪道名胶囊 + 雪道图
-   (数据来自卡片详情·雪道图页签,已从详情弹窗移出;复用卡片详情弹窗壳,图可点进大图) ---------- */
+/* ---------- 雪场「开放雪道」等级胶囊 → 雪道名浮窗:贴着胶囊弹出的轻量小卡片,
+   只放该等级的雪道名胶囊;雪道图仍在详情弹窗里。capture 拦截,不触发卡片详情 ---------- */
 (function(){
+  var pop = document.createElement('div');
+  pop.className = 'lv-pop';
+  document.body.appendChild(pop);
+  function hide(){ pop.classList.remove('open'); }
   document.addEventListener('click', function(e){
     var chip = e.target.closest ? e.target.closest('.chip.lv-map') : null;
-    if(!chip) return;
-    var d = (window.__RESORT_MAPS__ || {})[chip.getAttribute('data-map') || ''];
-    if(!d) return;
-    var mask = document.getElementById('popMask'),
-        title = document.getElementById('popTitle'),
-        body = document.getElementById('popBody');
-    if(!mask || !title || !body) return;
-    var lv = chip.getAttribute('data-lv') || '';
-    var names = (d.levels || {})[lv] || [];
-    var cls = { '初级': 'chip-lv1', '中级': 'chip-lv2', '高级': 'chip-lv3' }[lv] || '';
-    var html = '';
-    if(names.length){
-      html += '<div class="chip-row" style="justify-content:flex-start;margin:4px 0 12px">' + names.map(function(n){
-        return '<span class="chip ' + cls + '">' + n + '</span>';
-      }).join('') + '</div>';
+    if(!chip){
+      if(!pop.contains(e.target)) hide();   // 点浮窗以外任意处收起
+      return;
     }
-    (d.imgs || []).forEach(function(u){
-      html += '<div class="blk" style="margin:0 0 12px"><img src="' + u + '" alt="雪道图" '
-            + 'style="width:100%;display:block;border-radius:12px;cursor:zoom-in"></div>';
-    });
-    if(!html) return;
-    title.textContent = lv ? (lv + '道 · 雪道图') : '雪道图';
-    title.classList.remove('wx7-title');
-    body.innerHTML = html;
-    mask.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    body.scrollTop = 0;
-  });
+    var d = (window.__RESORT_MAPS__ || {})[chip.getAttribute('data-map') || ''];
+    var lv = chip.getAttribute('data-lv') || '';
+    var names = (d && d.levels && d.levels[lv]) || [];
+    if(!names.length) return;
+    e.stopPropagation();   // 阻断冒泡,避免同时打开卡片详情弹窗
+    var cls = { '初级': 'chip-lv1', '中级': 'chip-lv2', '高级': 'chip-lv3' }[lv] || '';
+    pop.innerHTML = '<div class="chip-row">' + names.map(function(n){
+      return '<span class="chip ' + cls + '">' + n + '</span>';
+    }).join('') + '</div>';
+    var again = pop.classList.contains('open') && pop.__for === chip;   // 再点同一颗=收起
+    hide();
+    if(again){ pop.__for = null; return; }
+    pop.__for = chip;
+    pop.classList.add('open');
+    var r = chip.getBoundingClientRect(), pw = pop.offsetWidth, ph = pop.offsetHeight;
+    var x = Math.max(10, Math.min(r.left, innerWidth - pw - 10));
+    var below = r.bottom + 10, up = ph + 10 <= r.top && below + ph > innerHeight - 10;
+    pop.classList.toggle('up', up);
+    pop.style.left = x + 'px';
+    pop.style.top = (up ? r.top - ph - 10 : below) + 'px';
+  }, true);   // capture:先于卡片点击处理器执行
+  window.addEventListener('scroll', hide, { passive: true });
 })();
 
 /* ---------- 刷新后回到原浏览位置(图片/实时数据加载改变页高,原生恢复会失效;多轮校正,用户一碰即停) ---------- */
