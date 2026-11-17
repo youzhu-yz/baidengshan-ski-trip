@@ -538,6 +538,10 @@ body.nav-top #chipbar{bottom:auto; top:calc(10px + env(safe-area-inset-top))}   
 .wx7-row .tp{font-weight:700;text-align:center;font-variant-numeric:tabular-nums}
 .wx7-row .tp i{font-style:normal;color:var(--muted);font-weight:400}
 .wx7-row .w{color:var(--muted);font-size:11px;text-align:center}
+.wx7-row.hl{background:var(--accent-weak);border-radius:10px;border-top-color:transparent}
+.wx7-row.hl + .wx7-row{border-top-color:transparent}
+.wx7-row.hl .d{color:var(--accent-deep);font-weight:800}   /* 高亮日(行程日):淡蓝底+日期标蓝加粗 */
+.dark .wx7-row.hl{background:#1d3450}
 .wx7-tip{padding:26px 10px;text-align:center;color:var(--muted);font-size:12.5px}
 .dark .wx-more:active{background:#232d3e}
 
@@ -1593,7 +1597,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.76 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.77 分享版</div>
   
 </footer>
 
@@ -1862,6 +1866,7 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     return '周' + WK[d.getDay()] + ' ' + md;
   }
   var cache = null;   // 本次页面周期内的15天数据(⟳ 重建页面后自然重拉)
+  var HL_DATES = { '2026-11-28': 1, '2026-11-29': 1, '2026-11-30': 1 };   // 行程日高亮(11/28–11/30)
   var lastOpen = 0;
   function open7d(t){
     var now = Date.now();
@@ -1910,7 +1915,7 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
   }
   function render(body, days){
     var rows = days.map(function(d, i){
-      return '<div class="wx7-row"><span class="d">' + dateLabel(d.fxDate, i) + '</span>'
+      return '<div class="wx7-row' + (HL_DATES[d.fxDate] ? ' hl' : '') + '"><span class="d">' + dateLabel(d.fxDate, i) + '</span>'
            + '<span class="i">' + icoOf(d.textDay || '雪') + '</span>'
            + '<span class="tp">' + esc(d.tempMax) + '°<i>/ ' + esc(d.tempMin) + '°</i></span>'
            + '<span class="w">' + esc(d.windDirDay || '') + esc(d.windScaleDay || '') + '级</span></div>';
