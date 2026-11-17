@@ -1378,6 +1378,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 .blk[data-t="胶囊"]{min-height:0;padding:2px 0}   /* 胶囊块不吃图片占位的 64px 最小高,组间间距回归正常 */
 .pop-chiprow + .pop-chiprow{margin-top:6px}   /* 同组多行:行间 6px */
 .pop-more > .blk[data-t="胶囊"]{margin-bottom:3px}
+.pop-more > .blk + .blk[data-t="胶囊"]{margin-top:2px}   /* 胶囊紧贴上方内容(雪道图图片等) */
 .pop-more > .blk[data-t="胶囊"] + .blk{margin-top:2px}   /* 胶囊紧贴下方的雪道图(占位/图片) */
 .pop-more > .blk[data-t="胶囊"] + .blk[data-t="胶囊"]{margin-top:13px}   /* 等级组之间维持原间距 */
 .blk img{width:100%;border-radius:8px;display:block}
@@ -1586,7 +1587,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.72 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.73 分享版</div>
   
 </footer>
 
