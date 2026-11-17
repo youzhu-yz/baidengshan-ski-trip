@@ -1164,11 +1164,11 @@ ul.dots li.fld::before{display:none!important}   /* 屏蔽通用点号,只留标
 .lv-pop{position:fixed;z-index:80;background:var(--card);border:1px solid var(--line);border-radius:14px;
   box-shadow:0 12px 32px rgba(16,24,40,.2);padding:10px 12px;max-width:min(340px,88vw);display:none}
 .lv-pop.open{display:block}
-.lv-pop::before{content:"";position:absolute;top:-5.5px;left:20px;width:9px;height:9px;background:var(--card);
+.lv-pop::before{content:"";position:absolute;top:-5.5px;left:var(--cx,20px);width:9px;height:9px;background:var(--card);
   border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
 .lv-pop.up::before{top:auto;bottom:-5.5px;border:none;border-right:1px solid var(--line);
   border-bottom:1px solid var(--line);transform:rotate(45deg)}
-.lv-pop .chip-row{justify-content:flex-start;margin:0}
+.lv-pop .chip-row{display:grid;grid-template-columns:repeat(3,auto);gap:6px;justify-content:flex-start;margin:0}   /* 每行固定3枚 */
 .dark .chip.chip-lv1{background:#268a53;color:#fff;border-color:#268a53}
 .dark .chip.chip-lv2{background:#2f7de0;color:#fff;border-color:#2f7de0}   /* 深色模式:亮实心蓝,与暗蓝普通胶囊(#1d3450)明显区分 */
 .dark .chip.chip-lv3{background:#0d1117;color:#f2f5f9;border-color:#41495a}
@@ -1605,7 +1605,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.78 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.79 分享版</div>
   
 </footer>
 
@@ -1968,6 +1968,8 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     pop.classList.toggle('up', up);
     pop.style.left = x + 'px';
     pop.style.top = (up ? r.top - ph - 10 : below) + 'px';
+    /* 箭头 x 跟随所点胶囊的中心(限制在浮窗边缘内) */
+    pop.style.setProperty('--cx', Math.max(12, Math.min(r.left + r.width / 2 - x, pw - 21)) + 'px');
   }, true);   // capture:先于卡片点击处理器执行
   window.addEventListener('scroll', hide, { passive: true });
 })();
