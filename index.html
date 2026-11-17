@@ -1374,6 +1374,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 .pop-more h4{font-size:17px;line-height:1.4;margin:0 0 6px;text-align:center}
 .blk{margin:12px 0}
 .blk p{font-size:14px;white-space:pre-line;color:#333a48;text-align:center}
+.pop-chiprow{justify-content:center}   /* 弹窗内胶囊行居中 */
 .blk img{width:100%;border-radius:8px;display:block}
 .blk img.blk-half{width:50%;margin:0 auto}   /* 「小图」:半宽缩略(如订单截图/PDF 首页) */
 .blk img.blk-fith{width:auto;max-width:100%;max-height:calc(100dvh - 240px);object-fit:contain;margin:0 auto}   /* 「等高」:整屏等高(如雪票长截图),宽度按图片比例;精确高度由页尾脚本按弹窗可视高度量测覆盖 */
@@ -1580,7 +1581,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.62 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.63 分享版</div>
   
 </footer>
 
@@ -1605,7 +1606,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
     <div class="pop-body" id="popBody"></div>
   </div>
 </div>
-<script id="carddata" type="application/json">{"costs|费用均摊": {"tabs": [{"name": "费用明细", "blocks": [{"t": "HTML", "c": "<div class=\"tbl-scroll\"><table class=\"cost-table cost-detail\"><tr><th class=\"cost-item-h\"></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/3545cfca7f.jpg\" alt=\"幽助\"><span>幽助</span></div></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/adbb15c823.jpg\" alt=\"Z&amp;L\"><span>Z&amp;L</span></div></th><th class=\"cost-sum-h\">合计</th></tr><tr><th class=\"cost-item\">机票</th><td>1455.0</td><td>1455.0</td><td class=\"cost-sum-td\">2910.0</td></tr><tr><th class=\"cost-item\">车费</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr><th class=\"cost-item\">住宿</th><td>451.1</td><td>451.1</td><td class=\"cost-sum-td\">902.2</td></tr><tr><th class=\"cost-item\">雪票</th><td>529.3/<wbr>559.3</td><td>529.3/<wbr>559.3</td><td class=\"cost-sum-td\">1058.6/<wbr>1118.6</td></tr><tr><th class=\"cost-item\">吃饭</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr class=\"cost-total-row\"><th class=\"cost-item\">合计</th><td>2435.4/<wbr>2465.4</td><td>2435.4/<wbr>2465.4</td><td class=\"cost-sum-td\">4870.8/<wbr>4930.8</td></tr></table></div>"}]}, {"name": "费用记录", "blocks": [{"t": "提示", "c": "📒 费用记录:随时记一笔(吃饭/打车/杂费);记完把金额填进「费用均摊」表对应列,页面自动汇总", "n": ""}]}]}, "resorts|🏔️大同万龙白登山滑雪场": {"tabs": [{"name": "雪道图", "blocks": [{"t": "文本", "c": "初级(3条):至睦道、至安道、至智道", "n": ""}, {"t": "文本", "c": "中级(10条):至慈道、至爱道、至善道、至泰道、至贤道、至乐道、至公道、至平道、至吉道、至仁道", "n": ""}, {"t": "文本", "c": "高级(5条):至美道、至和道、至礼道、至信道、至义道", "n": ""}, {"t": "提示", "c": "📷 雪道图待补充", "n": ""}], "subs": [], "cols": 0}, {"name": "雪票信息", "blocks": [], "subs": [{"name": "DAY 1 日场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D1日场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}, {"name": "DAY 1 夜场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D1夜场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}, {"name": "DAY 2 日场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D2日场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}, {"name": "DAY 2 夜场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D2夜场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}], "cols": 0}]}}</script>
+<script id="carddata" type="application/json">{"costs|费用均摊": {"tabs": [{"name": "费用明细", "blocks": [{"t": "HTML", "c": "<div class=\"tbl-scroll\"><table class=\"cost-table cost-detail\"><tr><th class=\"cost-item-h\"></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/3545cfca7f.jpg\" alt=\"幽助\"><span>幽助</span></div></th><th class=\"cost-people\"><div class=\"cost-th-who\"><img class=\"mimg\" src=\"images/a/adbb15c823.jpg\" alt=\"Z&amp;L\"><span>Z&amp;L</span></div></th><th class=\"cost-sum-h\">合计</th></tr><tr><th class=\"cost-item\">机票</th><td>1455.0</td><td>1455.0</td><td class=\"cost-sum-td\">2910.0</td></tr><tr><th class=\"cost-item\">车费</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr><th class=\"cost-item\">住宿</th><td>451.1</td><td>451.1</td><td class=\"cost-sum-td\">902.2</td></tr><tr><th class=\"cost-item\">雪票</th><td>529.3/<wbr>559.3</td><td>529.3/<wbr>559.3</td><td class=\"cost-sum-td\">1058.6/<wbr>1118.6</td></tr><tr><th class=\"cost-item\">吃饭</th><td><span class=\"cost-empty\">—</span></td><td><span class=\"cost-empty\">—</span></td><td class=\"cost-sum-td\"><span class=\"cost-empty\">—</span></td></tr><tr class=\"cost-total-row\"><th class=\"cost-item\">合计</th><td>2435.4/<wbr>2465.4</td><td>2435.4/<wbr>2465.4</td><td class=\"cost-sum-td\">4870.8/<wbr>4930.8</td></tr></table></div>"}]}, {"name": "费用记录", "blocks": [{"t": "提示", "c": "📒 费用记录:随时记一笔(吃饭/打车/杂费);记完把金额填进「费用均摊」表对应列,页面自动汇总", "n": ""}]}]}, "resorts|🏔️大同万龙白登山滑雪场": {"tabs": [{"name": "雪道图", "blocks": [{"t": "胶囊", "c": "至睦道、至安道、至智道", "n": "初级"}, {"t": "胶囊", "c": "至慈道、至爱道、至善道、至泰道、至贤道、至乐道、至公道、至平道、至吉道、至仁道", "n": "中级"}, {"t": "胶囊", "c": "至美道、至和道、至礼道、至信道、至义道", "n": "高级"}, {"t": "提示", "c": "📷 雪道图待补充", "n": ""}], "subs": [], "cols": 0}, {"name": "雪票信息", "blocks": [], "subs": [{"name": "DAY 1 日场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D1日场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}, {"name": "DAY 1 夜场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D1夜场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}, {"name": "DAY 2 日场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D2日场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}, {"name": "DAY 2 夜场", "blocks": [{"t": "提示", "c": "📷 截图待补充:图片放入 images\\雪场\\ 并命名为 雪票_D2夜场.jpg 后,把此行类型改为 图片", "n": ""}], "subs": []}], "cols": 0}]}}</script>
 
 <!-- ================= 图片全屏查看 ================= -->
 <div class="imgview" id="imgView">
@@ -4022,6 +4023,17 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
       var h = document.createElement('h4'); h.textContent = bt.c; d.appendChild(h);
     } else if(bt.t === '文本'){
       var p = document.createElement('p'); p.textContent = bt.c || ' '; d.appendChild(p);
+    } else if(bt.t === '胶囊'){
+      /* 内容=顿号分隔的多项,说明=等级(初级/中级/高级)→ 对应配色胶囊 */
+      var lvCls = /初级/.test(bt.n || '') ? ' chip-lv1' : (/中级/.test(bt.n || '') ? ' chip-lv2'
+                 : (/高级/.test(bt.n || '') ? ' chip-lv3' : ''));
+      var cr = document.createElement('div'); cr.className = 'chip-row pop-chiprow';
+      (bt.c || '').split(/[、,，]/).forEach(function(x){
+        x = x.trim(); if(!x) return;
+        var sp = document.createElement('span'); sp.className = 'chip' + lvCls; sp.textContent = x;
+        cr.appendChild(sp);
+      });
+      d.appendChild(cr);
     } else if(bt.t === '提示'){
       var tb = document.createElement('div');
       tb.className = 'tipbox' + (bt.c && bt.c.indexOf('此内容涉及敏感信息') >= 0 ? ' sec-hint'
