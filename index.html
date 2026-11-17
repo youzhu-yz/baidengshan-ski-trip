@@ -1583,7 +1583,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.70 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.71 分享版</div>
   
 </footer>
 
@@ -1933,6 +1933,18 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     if(t) return;
     t = setTimeout(function(){ t = null; try{ sessionStorage.setItem(KEY, String(window.scrollY)); }catch(e){} }, 250);
   }, {passive: true});
+})();
+
+/* ---------- 同行人员卡:点击平滑跳到住宿卡片(谁住哪一眼看到) ---------- */
+(function(){
+  document.addEventListener("click", function(e){
+    if(!e.target.closest) return;
+    var card = e.target.closest(".mcard");
+    if(!card || !card.closest("#members")) return;   /* 仅同行人员板块的卡 */
+    if(e.target.closest("a,button,input,label")) return;
+    var stay = document.getElementById("stay");
+    if(stay) stay.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 })();
 
 /* ---------- 导航:点击平滑滚 + 滚动高亮(双列瀑布流下按可视位置判定) ---------- */
