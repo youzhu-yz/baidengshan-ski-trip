@@ -1608,7 +1608,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.84 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.85 分享版</div>
   
 </footer>
 
@@ -2011,7 +2011,7 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     if(!stay) return;
     var mt = parseFloat(getComputedStyle(stay).scrollMarginTop) || 0;   /* 与导航锚点跳转同一偏移 */
     var y = stay.getBoundingClientRect().top + window.scrollY - mt;
-    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+    window.scrollTo(0, Math.max(0, y));   /* 瞬时跳转:与导航栏点击行为一致(smooth 在部分内核会被吞) */
   });
 })();
 
