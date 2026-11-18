@@ -1367,6 +1367,9 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 /* 详情弹窗二级页签(如登机凭证下按人员分):胶囊小页签,随内容滚动 */
 /* 二级页签(如 车票/上海到北京):等宽铺满整行,主页签的小一号同款 */
 .pop-subtabs{display:flex;gap:6px;flex:none;margin:2px 0 8px}
+.pop-pane > .pop-subtabs{position:sticky;top:0;z-index:6;background:var(--card);
+  padding:6px 0 6px;margin:0 0 8px;box-shadow:0 3px 8px rgba(16,24,40,.08)}   /* 子页签吸附滚动区顶,不跟内容滚走 */
+.dark .pop-pane > .pop-subtabs{background:#1b2230;box-shadow:0 3px 8px rgba(0,0,0,.35)}
 .pop-subtab{flex:1;min-width:0;padding:6px 2px;border:1px solid var(--line);border-radius:8px;
   background:#f6f8fb;color:#5b6b83;font-size:11px;font-weight:700;font-family:inherit;
   cursor:pointer;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
@@ -1605,7 +1608,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.82 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.83 分享版</div>
   
 </footer>
 
