@@ -1605,7 +1605,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.91 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.92 分享版</div>
   
 </footer>
 
@@ -2006,10 +2006,12 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
     if(e.target.closest("a,button,input,label")) return;
     var a = document.querySelector('#chips a[href="#stay"]');
     if(!a) return;
-    var bar = document.getElementById("chipbar");
-    var wasHidden = bar && !bar.classList.contains("show");
-    if(wasHidden) bar.classList.add("show");   /* 标签栏收起态会拦截点击:临时展开放行,滚动后由其自身逻辑接管状态 */
-    a.click();
+    setTimeout(function(){
+      var bar = document.getElementById("chipbar");
+      var wasHidden = bar && !bar.classList.contains("show");
+      if(wasHidden) bar.classList.add("show");   /* 标签栏收起态会拦截点击:临时展开放行 */
+      a.click();   /* 须跳出当前事件分发再点:分发过程中嵌套的锚点点击不触发默认跳转 */
+    }, 0);
   });
 })();
 
