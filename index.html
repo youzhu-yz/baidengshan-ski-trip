@@ -1605,7 +1605,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.92 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.93 分享版</div>
   
 </footer>
 
@@ -1997,21 +1997,19 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
   }, {passive: true});
 })();
 
-/* ---------- 同行人员卡:点击跳到住宿卡片(直接模拟点击导航栏「住宿」标签,落点与其天然一致) ---------- */
+/* ---------- 同行人员卡:点击跳到住宿卡片(与导航栏点击同公式:板块顶对齐视口顶) ---------- */
 (function(){
   document.addEventListener("click", function(e){
     if(!e.target.closest) return;
     var card = e.target.closest(".mcard");
     if(!card || !card.closest("#members")) return;   /* 仅同行人员板块的卡 */
     if(e.target.closest("a,button,input,label")) return;
-    var a = document.querySelector('#chips a[href="#stay"]');
-    if(!a) return;
-    setTimeout(function(){
-      var bar = document.getElementById("chipbar");
-      var wasHidden = bar && !bar.classList.contains("show");
-      if(wasHidden) bar.classList.add("show");   /* 标签栏收起态会拦截点击:临时展开放行 */
-      a.click();   /* 须跳出当前事件分发再点:分发过程中嵌套的锚点点击不触发默认跳转 */
-    }, 0);
+    var stay = document.getElementById("stay");
+    if(!stay) return;
+    /* 与页面导航拦截器(2863行)同一算法:实时位置 + 当前滚动 = 稳态目标;
+       不可缓存绝对位置(懒加载图片会改动布局) */
+    var to = Math.ceil(stay.getBoundingClientRect().top) + (window.scrollY || 0);
+    window.scrollTo(0, Math.max(0, to));
   });
 })();
 
