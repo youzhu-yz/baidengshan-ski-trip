@@ -1605,7 +1605,7 @@ li.fld .li-lab,li.lab .li-lab{font-size:12px;font-weight:700;color:var(--muted);
 </div><!-- /wrap -->
 
 <footer>
-  <div>❄️ <b>白登山,启动!</b> · v0.89 分享版</div>
+  <div>❄️ <b>白登山,启动!</b> · v0.90 分享版</div>
   
 </footer>
 
@@ -1997,22 +1997,19 @@ if(!location.hash){ try{ window.scrollTo(0, 0); }catch(_){} }
   }, {passive: true});
 })();
 
-/* ---------- 同行人员卡:点击平滑跳到住宿卡片(落点与导航栏点击一致:同一 scroll-margin) ---------- */
+/* ---------- 同行人员卡:点击跳到住宿卡片(直接模拟点击导航栏「住宿」标签,落点与其天然一致) ---------- */
 (function(){
   document.addEventListener("click", function(e){
     if(!e.target.closest) return;
     var card = e.target.closest(".mcard");
     if(!card || !card.closest("#members")) return;   /* 仅同行人员板块的卡 */
     if(e.target.closest("a,button,input,label")) return;
-    var stay = document.getElementById("stay");
-    if(!stay) return;
-    var mt = parseFloat(getComputedStyle(stay).scrollMarginTop) || 0;   /* 与导航锚点跳转同一偏移 */
-    /* scrollIntoView 实时解析位置并应用 scroll-margin,与导航锚点跳转落点一致;
-       懒加载图片会改动布局,不能用预计算的绝对位置(会过期漂移) */
-    if(mt > 0){
-      stay.style.scrollMarginTop = mt + "px";
-    }
-    stay.scrollIntoView();
+    var a = document.querySelector('#chips a[href="#stay"]');
+    if(!a) return;
+    var bar = document.getElementById("chips");
+    var wasHidden = bar && !bar.classList.contains("show");
+    if(wasHidden) bar.classList.add("show");   /* 标签栏收起态会拦截点击:临时展开放行,滚动后由其自身逻辑接管状态 */
+    a.click();
   });
 })();
 
